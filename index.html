@@ -1,33 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
-    <title>CRUD</title>
-    <style>
-        img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-        }
-        section {
-            padding: 0.5px;
-            border: 1px solid lightcoral;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <button id="btn-create">Create a new user</button>
-        <hr>
-        <button id="btn-edit">Edit existing user</button>
-        <hr>
-        <button id="btn-delete">Delete existing user</button>
-    </header>
-    <hr>
-    <div id="users-container"></div>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Users App</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="login-section">
+        <h1 class="title">Users App</h1>
+        <div class="form-block">
+          <form class="form" data-create-user-form>
+            <div class="control-field">
+              <label for="nameId" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nameId"
+                name="userName"
+                required
+                minlength="2"
+                maxlength="23"
+              />
+            </div>
+            <div class="control-field">
+              <label for="cityId" class="form-label">City</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cityId"
+                name="userCity"
+                required
+                minlength="2"
+                maxlength="20"
+              />
+            </div>
+            <div class="control-field">
+              <label for="emailId" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control form-control--email"
+                id="emailId"
+                name="userEmail"
+                required
+              />
+            </div>
+            <div class="control-field">
+              <label for="imagesUrlId" class="form-label">Images</label>
+              <select
+                name="userImageUrl"
+                id="imagesUrlId"
+                class="form-control form-control--images"
+                required
+              >
+                <option value="">Image URL</option>
+                <hr />
+                <option
+                  value="https://avatars.mds.yandex.net/i?id=02c22ebe6cc9a553e226e5a5fac18181cbd5e254-5888781-images-thumbs&n=13"
+                >
+                  img 1
+                </option>
+                <option
+                  value="https://avatars.mds.yandex.net/i?id=033474d243d690a0c24d1ef798971e1217d6e3a26e6383cf-5267851-images-thumbs&n=13"
+                >
+                  img 2
+                </option>
+                <option
+                  value="https://avatars.mds.yandex.net/i?id=0d7fefc4819c3ad1781c73d1a79046ea6ecf1bcd-4168527-images-thumbs&n=13"
+                >
+                  img 3
+                </option>
+                <option
+                  value="https://avatars.mds.yandex.net/i?id=75481c4eb6efe7d9564db7759915a9c7c5a94a71-10397524-images-thumbs&n=13"
+                >
+                  img 4
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn submit-btn">Create User</button>
+          </form>
+        </div>
+      </section>
+      <div class="users-container" data-users-container></div>
+    </div>
+    <dialog class="edit-form-dialog" data-edit-user-form-dialog></dialog>
+  </body>
 </html>
